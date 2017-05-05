@@ -1,0 +1,43 @@
+{
+  "name": "react-giphy-select",
+  "version": "0.0.0",
+  "description": "A React component for select GIFs on GIPHY.",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./demo/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WEACOMRU/react-giphy-select.git"
+  },
+  "keywords": [
+    "react",
+    "giphy",
+    "gif"
+  ],
+  "author": "bashkos <bashkos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WEACOMRU/react-giphy-select/issues"
+  },
+  "homepage": "https://github.com/WEACOMRU/react-giphy-select#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "express": "^4.15.2",
+    "react-dom": "^15.5.4"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4"
+  }
+}

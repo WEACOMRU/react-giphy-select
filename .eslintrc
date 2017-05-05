@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/anchor-has-content": "warn",
+    "jsx-a11y/img-has-alt": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "no-floating-decimal": "off",
+    "no-mixed-operators": "off",
+    "no-underscore-dangle": ["error", {
+      "allow": ["_example"],
+      "allowAfterThis": true,
+      "allowAfterSuper": true
+    }]
+  }
+}
