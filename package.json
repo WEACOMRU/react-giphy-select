@@ -34,7 +34,8 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "express": "^4.15.2",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-jss": "^6.1.1"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
