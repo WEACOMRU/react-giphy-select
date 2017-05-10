@@ -4,7 +4,7 @@
   "description": "A React component for select GIFs on GIPHY.",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./demo/server.js",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/WEACOMRU/react-giphy-select#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -33,12 +34,15 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "express": "^4.15.2",
     "react-dom": "^15.5.4",
-    "react-jss": "^6.1.1"
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-jss": "^6.1.1",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
-    "react": "^15.5.4"
+    "react": "^15.5.4",
+    "styled-components": "^1.4.6"
   }
 }

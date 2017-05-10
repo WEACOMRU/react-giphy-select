@@ -16,6 +16,7 @@
       "allow": ["_example"],
       "allowAfterThis": true,
       "allowAfterSuper": true
-    }]
+    }],
+    "react/jsx-filename-extension": "off"
   }
 }
