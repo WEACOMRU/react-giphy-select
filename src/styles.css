@@ -1,0 +1,11 @@
+.select {
+  width: 22em;
+}
+
+.selectInput {
+  padding: .5em .75em;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1em;
+}
