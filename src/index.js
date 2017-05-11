@@ -13,6 +13,7 @@ export default class GiphySelect extends Component {
     requestDelay: PropTypes.number,
     requestKey: PropTypes.string,
     requestLang: PropTypes.string,
+    requestRating: PropTypes.string,
   };
 
   static defaultProps = {
@@ -21,6 +22,7 @@ export default class GiphySelect extends Component {
     requestDelay: 500,
     requestKey: 'dc6zaTOxFJmzC',
     requestLang: 'en',
+    requestRating: 'pg',
   };
 
   state = {
@@ -56,11 +58,11 @@ export default class GiphySelect extends Component {
   }
 
   _fetchItems = () => {
-    const { requestKey, requestLang } = this.props;
+    const { requestKey, requestLang, requestRating } = this.props;
     const q = encodeURIComponent(this._query);
     const offset = this._offset;
 
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${q}&offset=${offset}&lang=${requestLang}&api_key=${requestKey}`)
+    fetch(`http://api.giphy.com/v1/gifs/search?q=${q}&offset=${offset}&lang=${requestLang}&rating=${requestRating}&api_key=${requestKey}`)
       .then(response => response.json())
       .then(this._updateItems)
       .catch(console.error);

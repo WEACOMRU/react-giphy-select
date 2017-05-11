@@ -1,11 +1,13 @@
 .select {
-  width: 310px;
+  width: 320px;
 }
 
 .selectInput {
+  margin-left: 5px;
+  margin-right: 5px;
   margin-bottom: 10px;
   padding: .5em .75em;
-  width: 100%;
+  width: calc(100% - 10px);
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1em;

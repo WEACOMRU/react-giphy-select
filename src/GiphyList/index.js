@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Masonry from 'react-masonry-component';
 import styles from './styles.css';
 
 export default class GiphyList extends Component {
@@ -52,13 +53,13 @@ export default class GiphyList extends Component {
     const theme = this._theme;
 
     return (
-      <ul className={theme.list}>
+      <Masonry className={theme.list} role="listbox">
         {items.map(item => (
-          <li key={item.id} className={theme.listItem}>
+          <div key={item.id} className={theme.listItem} role="option">
             {this.props.renderItem(item, onItemSelect, theme)}
-          </li>
+          </div>
         ))}
-      </ul>
+      </Masonry>
     );
   }
 }

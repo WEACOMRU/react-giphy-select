@@ -1,12 +1,9 @@
 .list {
-  margin: 0;
-  padding: 0;
-  column-count: 3;
-  column-gap: 5px;
-  list-style: none;
+  margin-left: 5px;
 }
 
 .listItem {
+  margin-right: 5px;
   margin-bottom: 5px;
   width: 100px;
   background-color: #ccc;
