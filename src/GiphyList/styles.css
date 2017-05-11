@@ -1,0 +1,27 @@
+.list {
+  margin: 0;
+  padding: 0;
+  column-count: 3;
+  column-gap: 5px;
+  list-style: none;
+}
+
+.listItem {
+  margin-bottom: 5px;
+  width: 100px;
+  background-color: #ccc;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.listButton {
+  padding: 0;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.listButtonImage {
+  display: block;
+}

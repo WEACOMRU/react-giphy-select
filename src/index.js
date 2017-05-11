@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import GiphyList from './GiphyList';
 import styles from './styles.css';
 
 export default class GiphySelect extends Component {
@@ -11,6 +12,7 @@ export default class GiphySelect extends Component {
     placeholder: PropTypes.string,
     requestDelay: PropTypes.number,
     requestKey: PropTypes.string,
+    requestLang: PropTypes.string,
   };
 
   static defaultProps = {
@@ -18,6 +20,17 @@ export default class GiphySelect extends Component {
     placeholder: 'Search GIFs',
     requestDelay: 500,
     requestKey: 'dc6zaTOxFJmzC',
+    requestLang: 'en',
+  };
+
+  state = {
+    items: [],
+  };
+
+  loadNextPage = () => {
+    if (this._offset < this._totalCount) {
+      this._fetchItems();
+    }
   };
 
   _onQueryChange = e => {
@@ -32,13 +45,35 @@ export default class GiphySelect extends Component {
       this._requestTimer = setTimeout(() => {
         if (query !== this._query) {
           this._query = query;
-          console.log(this._query);
-          fetch(`http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(this._query)}&api_key=${this.props.requestKey}`)
-            .then(response => response.json())
-            .then(console.log);
+          this._offset = 0;
+          this.setState({
+            items: [],
+          });
+          this._fetchItems();
         }
       }, this.props.requestDelay);
     }
+  }
+
+  _fetchItems = () => {
+    const { requestKey, requestLang } = this.props;
+    const q = encodeURIComponent(this._query);
+    const offset = this._offset;
+
+    fetch(`http://api.giphy.com/v1/gifs/search?q=${q}&offset=${offset}&lang=${requestLang}&api_key=${requestKey}`)
+      .then(response => response.json())
+      .then(this._updateItems)
+      .catch(console.error);
+  }
+
+  _updateItems = response => {
+    console.log(response);
+    this.setState(prevState => ({
+      items: [...prevState.items, ...response.data],
+    }));
+
+    this._offset = response.pagination.offset + response.pagination.count;
+    this._totalCount = response.pagination.total_count;
   }
 
   _theme = {
@@ -48,22 +83,23 @@ export default class GiphySelect extends Component {
   };
   _query = '';
   _requestTimer = null;
+  _offset = 0;
+  _totalCount = 0;
 
   render() {
     const { placeholder } = this.props;
+    const theme = this._theme;
+
+    console.log('render', this.state.items);
 
     return (
-      <div className={this._theme.select}>
+      <div className={theme.select}>
         <input
-          className={this._theme.selectInput}
+          className={theme.selectInput}
           placeholder={placeholder}
           onChange={this._onQueryChange}
         />
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
+        <GiphyList theme={theme} items={this.state.items} />
       </div>
     );
   }

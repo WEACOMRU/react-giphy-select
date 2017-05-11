@@ -1,8 +1,9 @@
 .select {
-  width: 22em;
+  width: 310px;
 }
 
 .selectInput {
+  margin-bottom: 10px;
   padding: .5em .75em;
   width: 100%;
   box-sizing: border-box;
