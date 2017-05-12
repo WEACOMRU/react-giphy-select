@@ -45,6 +45,7 @@
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
+    "react-custom-scrollbars": "^4.1.1",
     "react-masonry-component": "^5.0.5"
   }
 }

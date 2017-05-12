@@ -1,5 +1,41 @@
 .list {
   margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+  width: 330px;
+  height: 330px;
+}
+
+.listScrollbar {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  bottom: 7px;
+  width: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  opacity: .1;
+  transition: opacity .4s;
+}
+
+.list:hover .listScrollbar {
+  opacity: .3;
+}
+
+.list .listScrollbar:hover,
+.list .listScrollbar:active {
+  opacity: .6;
+}
+
+.listScrollbarThumb {
+  background-color: #000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.listMasonry {
+  margin-left: 10px;
+  width: 315px;
 }
 
 .listItem {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Scrollbars } from 'react-custom-scrollbars';
 import Masonry from 'react-masonry-component';
 import styles from './styles.css';
 
@@ -13,6 +14,7 @@ export default class GiphyList extends Component {
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     renderItem: PropTypes.func,
     onItemSelect: PropTypes.func,
+    loadNextPage: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -40,8 +42,17 @@ export default class GiphyList extends Component {
     onItemSelect: item => console.log(item),
   }
 
+  _onScroll = values => {
+    if (values.top === 1) {
+      this.props.loadNextPage();
+    }
+  }
+
   _theme = {
     list: styles.list,
+    listScrollbar: styles.listScrollbar,
+    listScrollbarThumb: styles.listScrollbarThumb,
+    listMasonry: styles.listMasonry,
     listItem: styles.listItem,
     listButton: styles.listButton,
     listButtonImage: styles.listButtonImage,
@@ -53,13 +64,25 @@ export default class GiphyList extends Component {
     const theme = this._theme;
 
     return (
-      <Masonry className={theme.list} role="listbox">
-        {items.map(item => (
-          <div key={item.id} className={theme.listItem} role="option">
-            {this.props.renderItem(item, onItemSelect, theme)}
-          </div>
-        ))}
-      </Masonry>
+      <div className={theme.list}>
+        <Scrollbars
+          renderTrackVertical={() => (
+            <div className={theme.listScrollbar} />
+          )}
+          renderThumbVertical={props => (
+            <div {...props} className={theme.listScrollbarThumb} />
+          )}
+          onScrollFrame={this._onScroll}
+        >
+          <Masonry className={theme.listMasonry} role="listbox">
+            {items.map(item => (
+              <div key={item.id} className={theme.listItem} role="option">
+                {this.props.renderItem(item, onItemSelect, theme)}
+              </div>
+            ))}
+          </Masonry>
+        </Scrollbars>
+      </div>
     );
   }
 }

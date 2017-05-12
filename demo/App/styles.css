@@ -14,5 +14,7 @@
 
 .appSelect {
   margin: auto;
-  width: 320px;
+  padding: 15px 0;
+  width: 340px;
+  border: 1px solid #ccc;
 }

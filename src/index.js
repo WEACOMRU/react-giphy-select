@@ -8,6 +8,7 @@ export default class GiphySelect extends Component {
     theme: PropTypes.shape({
       select: PropTypes.string,
       selectInput: PropTypes.string,
+      attribution: PropTypes.string,
     }),
     placeholder: PropTypes.string,
     requestDelay: PropTypes.number,
@@ -29,6 +30,10 @@ export default class GiphySelect extends Component {
     items: [],
   };
 
+  componentDidMount() {
+    this._fetchItems();
+  }
+
   loadNextPage = () => {
     if (this._offset < this._totalCount) {
       this._fetchItems();
@@ -43,26 +48,29 @@ export default class GiphySelect extends Component {
       this._requestTimer = null;
     }
 
-    if (query) {
-      this._requestTimer = setTimeout(() => {
-        if (query !== this._query) {
-          this._query = query;
-          this._offset = 0;
-          this.setState({
-            items: [],
-          });
-          this._fetchItems();
-        }
-      }, this.props.requestDelay);
-    }
+    this._requestTimer = setTimeout(() => {
+      if (query !== this._query) {
+        this._query = query;
+        this._offset = 0;
+        this.setState({
+          items: [],
+        });
+        this._fetchItems();
+      }
+    }, this.props.requestDelay);
   }
 
   _fetchItems = () => {
     const { requestKey, requestLang, requestRating } = this.props;
-    const q = encodeURIComponent(this._query);
+    let endpoint = '';
+    if (this._query) {
+      endpoint = `search?q=${encodeURIComponent(this._query)}&`;
+    } else {
+      endpoint = 'trending?';
+    }
     const offset = this._offset;
 
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${q}&offset=${offset}&lang=${requestLang}&rating=${requestRating}&api_key=${requestKey}`)
+    fetch(`http://api.giphy.com/v1/gifs/${endpoint}offset=${offset}&lang=${requestLang}&rating=${requestRating}&api_key=${requestKey}`)
       .then(response => response.json())
       .then(this._updateItems)
       .catch(console.error);
@@ -81,6 +89,7 @@ export default class GiphySelect extends Component {
   _theme = {
     select: styles.select,
     selectInput: styles.selectInput,
+    attribution: styles.attribution,
     ...this.props.theme,
   };
   _query = '';
@@ -101,7 +110,12 @@ export default class GiphySelect extends Component {
           placeholder={placeholder}
           onChange={this._onQueryChange}
         />
-        <GiphyList theme={theme} items={this.state.items} />
+        <GiphyList
+          theme={theme}
+          items={this.state.items}
+          loadNextPage={this.loadNextPage}
+        />
+        <div className={theme.attribution}>Powered by Giphy</div>
       </div>
     );
   }
