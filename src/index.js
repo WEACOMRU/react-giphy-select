@@ -60,6 +60,8 @@ export default class GiphySelect extends Component {
     }, this.props.requestDelay);
   }
 
+  _onWheel = e => e.preventDefault();
+
   _fetchItems = () => {
     const { requestKey, requestLang, requestRating } = this.props;
     let endpoint = '';
@@ -104,7 +106,7 @@ export default class GiphySelect extends Component {
     console.log('render', this.state.items);
 
     return (
-      <div className={theme.select}>
+      <div className={theme.select} onWheel={this._onWheel}>
         <input
           className={theme.selectInput}
           placeholder={placeholder}

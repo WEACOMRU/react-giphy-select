@@ -48,6 +48,13 @@ export default class GiphyList extends Component {
     }
   }
 
+  _onWheel = e => {
+    const top = this._scrollbars.getValues().top;
+    if ((e.deltaY > 0 && top < 1) || (e.deltaY < 0 && top > 0)) {
+      e.stopPropagation();
+    }
+  }
+
   _theme = {
     list: styles.list,
     listScrollbar: styles.listScrollbar,
@@ -64,15 +71,17 @@ export default class GiphyList extends Component {
     const theme = this._theme;
 
     return (
-      <div className={theme.list}>
+      <div className={theme.list} onWheel={this._onWheel}>
         <Scrollbars
+          onScrollFrame={this._onScroll}
           renderTrackVertical={() => (
             <div className={theme.listScrollbar} />
           )}
           renderThumbVertical={props => (
             <div {...props} className={theme.listScrollbarThumb} />
           )}
-          onScrollFrame={this._onScroll}
+          hideTracksWhenNotNeeded
+          ref={element => { this._scrollbars = element; }}
         >
           <Masonry className={theme.listMasonry} role="listbox">
             {items.map(item => (
