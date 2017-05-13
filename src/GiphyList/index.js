@@ -49,9 +49,20 @@ export default class GiphyList extends Component {
   }
 
   _onWheel = e => {
-    const top = this._scrollbars.getValues().top;
-    if ((e.deltaY > 0 && top < 1) || (e.deltaY < 0 && top > 0)) {
-      e.stopPropagation();
+    // Disable page scroll, but enable gifs scroll
+    const { clientHeight, scrollHeight, scrollTop } = this._scrollbars.getValues();
+    if (e.deltaY > 0) {
+      if (scrollTop < scrollHeight - clientHeight - e.deltaY) {
+        e.stopPropagation();
+      } else {
+        this._scrollbars.scrollToBottom();
+      }
+    } else {
+      if (scrollTop > -e.deltaY) { // eslint-disable-line no-lonely-if
+        e.stopPropagation();
+      } else {
+        this._scrollbars.scrollTop();
+      }
     }
   }
 
