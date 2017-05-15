@@ -2,12 +2,13 @@
   "name": "react-giphy-select",
   "version": "0.0.0",
   "description": "A React component for select GIFs on GIPHY.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "clean": "rimraf dist",
     "build": "npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
