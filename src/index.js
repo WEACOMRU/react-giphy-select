@@ -79,7 +79,6 @@ export default class GiphySelect extends Component {
   }
 
   _updateItems = response => {
-    console.log(response);
     this.setState(prevState => ({
       items: [...prevState.items, ...response.data],
     }));
@@ -102,8 +101,6 @@ export default class GiphySelect extends Component {
   render() {
     const { placeholder } = this.props;
     const theme = this._theme;
-
-    console.log('render', this.state.items);
 
     return (
       <div className={theme.select} onWheel={this._onWheel}>

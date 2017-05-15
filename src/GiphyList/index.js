@@ -39,7 +39,7 @@ export default class GiphyList extends Component {
         />
       </button>
     ),
-    onItemSelect: item => console.log(item),
+    onItemSelect: () => {},
   }
 
   _onScroll = values => {
