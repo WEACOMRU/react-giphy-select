@@ -1,6 +1,7 @@
 .select {
   padding: 15px 0;
   width: 340px;
+  color: inherit;
   border: 1px solid #ccc;
 }
 

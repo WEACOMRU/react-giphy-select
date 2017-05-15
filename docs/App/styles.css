@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.app {
+  margin: auto;
+  padding-bottom: 30px;
+  width: 600px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.appTitle {
+  font-weight: normal;
+  text-align: center;
+}
+
+.appHeader2 {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+
+.appCode {
+  padding: 1px 2px;
+  display: inline-block;
+  font-size: 14px;
+  background-color: #f0f0f0;
+}
+
+.appProps {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.appPropsName {
+  margin: 0 0 10px;
+  width: 115px;
+  font-weight: bold;
+}
+
+.appPropsDesc {
+  margin: 0 0 15px;
+  width: calc(100% - 115px);
+}
+
+.appPropsDefault {
+  color: #808080;
+}
+
+.appSubParams {
+  margin: 10px 0 0;
+}
+
+.appSubParamsName {
+  margin: 0 15px 0 0;
+  display: inline;
+  font-weight: bold;
+}
+
+.appSubParamsDesc {
+  margin: 0;
+  display: inline;
+}
+
+.appSubParamsDesc::after {
+  content: '';
+  margin-bottom: 10px;
+  display: block;
+}
+
+.appSelect {
+  margin: auto;
+  padding: 15px 0;
+  width: 340px;
+  border: 1px solid #ccc;
+}

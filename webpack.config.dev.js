@@ -1,10 +1,10 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 
-const demoDir = resolve(__dirname, 'demo');
+const docsDir = resolve(__dirname, 'docs');
 
 module.exports = {
-  context: demoDir,
+  context: docsDir,
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
@@ -13,13 +13,13 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: demoDir,
+    path: docsDir,
     publicPath: '/',
   },
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
-    contentBase: demoDir,
+    contentBase: docsDir,
     publicPath: '/',
   },
   module: {

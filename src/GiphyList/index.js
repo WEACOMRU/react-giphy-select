@@ -8,38 +8,42 @@ export default class GiphyList extends Component {
   static propTypes = {
     theme: PropTypes.shape({
       list: PropTypes.string,
+      listScrollbar: PropTypes.string,
+      listScrollbarThumb: PropTypes.string,
+      listMasonry: PropTypes.string,
       listItem: PropTypes.string,
-      listButton: PropTypes.string,
+      listEntry: PropTypes.string,
+      listEntryImage: PropTypes.string,
     }),
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
-    renderItem: PropTypes.func,
-    onItemSelect: PropTypes.func,
+    renderEntry: PropTypes.func,
+    onEntrySelect: PropTypes.func,
     loadNextPage: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     theme: {},
-    renderItem: (item, onSelect, theme) => (
+    renderEntry: (entry, onSelect, options) => (
       <button
-        className={theme.listButton}
+        className={options.theme.listEntry}
         style={{
-          width: `${item.images.fixed_width_small.width}px`,
-          height: `${item.images.fixed_width_small.height}px`,
-          backgroundImage: `url(${item.images.fixed_width_small_still.url})`,
+          width: `${entry.images.fixed_width_small.width}px`,
+          height: `${entry.images.fixed_width_small.height}px`,
+          backgroundImage: `url(${entry.images.fixed_width_small_still.url})`,
         }}
-        onClick={() => onSelect(item)}
+        onClick={() => onSelect(entry)}
         role="option"
       >
         <img
-          className={theme.listButtonImage}
-          src={item.images.fixed_width_small.url}
-          width={item.images.fixed_width_small.width}
-          height={item.images.fixed_width_small.height}
-          alt={item.slug}
+          className={options.theme.listEntryImage}
+          src={entry.images.fixed_width_small.url}
+          width={entry.images.fixed_width_small.width}
+          height={entry.images.fixed_width_small.height}
+          alt={entry.slug}
         />
       </button>
     ),
-    onItemSelect: () => {},
+    onEntrySelect: () => {},
   }
 
   _onScroll = values => {
@@ -72,13 +76,13 @@ export default class GiphyList extends Component {
     listScrollbarThumb: styles.listScrollbarThumb,
     listMasonry: styles.listMasonry,
     listItem: styles.listItem,
-    listButton: styles.listButton,
-    listButtonImage: styles.listButtonImage,
+    listEntry: styles.listEntry,
+    listEntryImage: styles.listEntryImage,
     ...this.props.theme,
   };
 
   render() {
-    const { items, onItemSelect } = this.props;
+    const { items, onEntrySelect } = this.props;
     const theme = this._theme;
 
     return (
@@ -95,9 +99,9 @@ export default class GiphyList extends Component {
           ref={element => { this._scrollbars = element; }}
         >
           <Masonry className={theme.listMasonry} role="listbox">
-            {items.map(item => (
-              <div key={item.id} className={theme.listItem} role="option">
-                {this.props.renderItem(item, onItemSelect, theme)}
+            {items.map(entry => (
+              <div key={entry.id} className={theme.listItem} role="option">
+                {this.props.renderEntry(entry, onEntrySelect, { theme })}
               </div>
             ))}
           </Masonry>

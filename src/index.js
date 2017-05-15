@@ -15,6 +15,8 @@ export default class GiphySelect extends Component {
     requestKey: PropTypes.string,
     requestLang: PropTypes.string,
     requestRating: PropTypes.string,
+    renderEntry: PropTypes.func,
+    onEntrySelect: PropTypes.func,
   };
 
   static defaultProps = {
@@ -22,8 +24,10 @@ export default class GiphySelect extends Component {
     placeholder: 'Search GIFs',
     requestDelay: 500,
     requestKey: 'dc6zaTOxFJmzC',
-    requestLang: 'en',
+    requestLang: '',
     requestRating: 'pg',
+    renderEntry: GiphyList.defaultProps.renderEntry,
+    onEntrySelect: GiphyList.defaultProps.onEntrySelect,
   };
 
   state = {
@@ -99,7 +103,7 @@ export default class GiphySelect extends Component {
   _totalCount = 0;
 
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, renderEntry, onEntrySelect } = this.props;
     const theme = this._theme;
 
     return (
@@ -112,6 +116,8 @@ export default class GiphySelect extends Component {
         <GiphyList
           theme={theme}
           items={this.state.items}
+          renderEntry={renderEntry}
+          onEntrySelect={onEntrySelect}
           loadNextPage={this.loadNextPage}
         />
         <div className={theme.attribution}>Powered by Giphy</div>
