@@ -165,6 +165,15 @@ const App = () => (
       language="javascript"
       style={tomorrowNightEighties}
     >{usageCode}</SyntaxHighlighter>
+    <h2 className={styles.appHeader2}>Attribution to Giphy</h2>
+    <p>
+      Please read Giphy&nbsp;
+      <a
+        href="https://giphy.com/terms"
+        rel="noopener noreferrer"
+        target="_blank"
+      >terms of service</a>.
+    </p>
     <h2 className={styles.appHeader2}>Contribution</h2>
     <p>Start demo with docs</p>
     <SyntaxHighlighter

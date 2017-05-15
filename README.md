@@ -1,7 +1,16 @@
-# React Giphy Select Component
-A React component for select GIFs by Giphy API.
+# react-giphy-select
 
-![Preview](./github-preview.jpg)
+[![Build Status][travis-svg]][travis-url]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
+
+[![npm badge][npm-badge-png]][package-url]
+
+> A React component for select GIFs by Giphy API.
+
+![Preview](https://raw.githubusercontent.com/WEACOMRU/react-giphy-select/master/github-preview.jpg)
 
 By default it show GIFs currently trending online. But user can request
 a specific GIFs using the search input.
@@ -63,6 +72,9 @@ export default class Example extends Component {
   }
 }
 ```
+
+## Attribution to Giphy
+Please read Giphy [terms of service](https://giphy.com/terms).
 
 ## Contribution
 Start demo with docs
