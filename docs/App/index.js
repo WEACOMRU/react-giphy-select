@@ -147,7 +147,7 @@ const App = () => (
       </dd>
       <dt className={styles.appPropsName}>onEntrySelect</dt>
       <dd className={styles.appPropsDesc}>
-        A callback which is triggered whenever the entry is selected.
+        A callback which is triggered whenever the entry is selected
         <SyntaxHighlighter
           language="javascript"
           style={tomorrowNightEighties}

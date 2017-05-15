@@ -33,8 +33,8 @@ ISO 639-1 country code. See list of supported languages [here](https://github.co
 - **renderEntry** - You can rewrite default `renderEntry` method
 
   ```javascript
-renderEntry(entry, onSelect, options)
-```
+  renderEntry(entry, onSelect, options)
+  ```
 
   - **entry** - Object with entry data from Giphy API.
   - **onSelect** - `onEntrySelect` callback.
@@ -43,8 +43,8 @@ renderEntry(entry, onSelect, options)
 - **onEntrySelect** - A callback which is triggered whenever the entry is selected.
 
   ```javascript
-onEntrySelect(entry)
-```
+  onEntrySelect(entry)
+  ```
 
   - **entry** - Object with entry data from Giphy API.
 
