@@ -24,6 +24,7 @@ You will need [Webpack](https://webpack.js.org/) or other build system supprts r
 ```javascript
 import React, { Component } from 'react';
 import GiphySelect from 'react-giphy-select';
+import 'react-giphy-select/dist/styles.css';
 
 export default class Example extends Component {
   render() {
