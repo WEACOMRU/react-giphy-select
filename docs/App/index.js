@@ -70,7 +70,7 @@ const App = () => (
         href="https://webpack.js.org/"
         rel="noopener noreferrer"
         target="_blank"
-      >Webpack</a> or other build system supprts requiring css files.
+      >Webpack</a> or other build system, that supports requiring css files.
     </p>
     <SyntaxHighlighter
       language="javascript"

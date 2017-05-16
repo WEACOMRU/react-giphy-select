@@ -20,7 +20,7 @@ The plugin ships with a default styling available at this location in the instal
 ```bash
 node_modules/react-giphy-select/dist/styles.css
 ```
-You will need [Webpack](https://webpack.js.org/) or other build system supprts requiring css files.
+You will need [Webpack](https://webpack.js.org/) or other build system, that supports requiring css files.
 ```javascript
 import React, { Component } from 'react';
 import GiphySelect from 'react-giphy-select';
