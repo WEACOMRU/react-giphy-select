@@ -5,8 +5,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   context: resolve(__dirname, 'src'),
   entry: './index.js',
+  externals: {
+    react: {
+      global: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+  },
   output: {
-    filename: 'index.js',
+    filename: 'react-giphy-select.min.js',
+    library: 'GiphySelect',
+    libraryTarget: 'umd',
     path: resolve(__dirname, 'dist'),
   },
   module: {
@@ -20,13 +30,22 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?modules&localIdentName=[local]___[hash:base64:5]!postcss-loader',
+          use: [{
+            loader: 'css-loader',
+            options: {
+              minimize: process.env.NODE_ENV === 'production',
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          }, {
+            loader: 'postcss-loader',
+          }],
         }),
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('react-giphy-select.min.css'),
     new webpack.optimize.UglifyJsPlugin(),
   ],
 };
