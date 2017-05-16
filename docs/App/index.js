@@ -10,10 +10,10 @@ registerLanguage('bash', bash);
 registerLanguage('javascript', javascript);
 
 const installationCode = '$ npm i -S react-giphy-select';
-const renderEntryCode = 'renderEntry(entry, onSelect, options)';
-const onEntrySelectCode = 'onEntrySelect(entry)';
+const stylesCode = 'node_modules/react-giphy-select/dist/styles.css';
 const usageCode = `import React, { Component } from 'react';
 import GiphySelect from 'react-giphy-select';
+import 'react-giphy-select/dist/styles.css';
 
 export default class Example extends Component {
   render() {
@@ -24,22 +24,59 @@ export default class Example extends Component {
     );
   }
 }`;
+const renderEntryCode = 'renderEntry(entry, onSelect, options)';
+const onEntrySelectCode = 'onEntrySelect(entry)';
 const contributingCode = '$ npm start';
 
 const App = () => (
   <div className={styles.app}>
     <h1 className={styles.appTitle}>React Giphy Select Component</h1>
+
     <p>A React component for select GIFs by Giphy API.</p>
     <GiphySelect theme={{ select: styles.appSelect }} />
     <p>
       By default it show GIFs currently trending online. But user can request
       a specific GIFs using the search input.
     </p>
+
+    <h2 className={styles.appHeader2}>Attribution to Giphy</h2>
+    <p>
+      Please read Giphy&nbsp;
+      <a
+        href="https://giphy.com/terms"
+        rel="noopener noreferrer"
+        target="_blank"
+      >terms of service</a>.
+    </p>
+
     <h2 className={styles.appHeader2}>Installation</h2>
     <SyntaxHighlighter
       language="bash"
       style={tomorrowNightEighties}
     >{installationCode}</SyntaxHighlighter>
+
+    <h2 className={styles.appHeader2}>Usage</h2>
+    <p>
+      The plugin ships with a default styling available at this location in the
+      installed package:
+    </p>
+    <SyntaxHighlighter
+      language="bash"
+      style={tomorrowNightEighties}
+    >{stylesCode}</SyntaxHighlighter>
+    <p>
+      You will need&nbsp;
+      <a
+        href="https://webpack.js.org/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >Webpack</a> or other build system supprts requiring css files.
+    </p>
+    <SyntaxHighlighter
+      language="javascript"
+      style={tomorrowNightEighties}
+    >{usageCode}</SyntaxHighlighter>
+
     <h2 className={styles.appHeader2}>Props</h2>
     <dl className={styles.appProps}>
       <dt className={styles.appPropsName}>theme</dt>
@@ -160,20 +197,7 @@ const App = () => (
         </dl>
       </dd>
     </dl>
-    <h2 className={styles.appHeader2}>Usage</h2>
-    <SyntaxHighlighter
-      language="javascript"
-      style={tomorrowNightEighties}
-    >{usageCode}</SyntaxHighlighter>
-    <h2 className={styles.appHeader2}>Attribution to Giphy</h2>
-    <p>
-      Please read Giphy&nbsp;
-      <a
-        href="https://giphy.com/terms"
-        rel="noopener noreferrer"
-        target="_blank"
-      >terms of service</a>.
-    </p>
+
     <h2 className={styles.appHeader2}>Contribution</h2>
     <p>Start demo with docs</p>
     <SyntaxHighlighter
@@ -181,6 +205,7 @@ const App = () => (
       style={tomorrowNightEighties}
     >{contributingCode}</SyntaxHighlighter>
     <p>Please, create issues and pull requests.</p>
+
     <h2 className={styles.appHeader2}>License</h2>
     <p>MIT.</p>
   </div>

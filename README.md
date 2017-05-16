@@ -7,10 +7,33 @@
 By default it show GIFs currently trending online. But user can request
 a specific GIFs using the search input.
 
-## Installation
+## Attribution to Giphy
+Please read Giphy [terms of service](https://giphy.com/terms).
 
+## Installation
 ```bash
 $ npm i -S react-giphy-select
+```
+
+## Usage
+The plugin ships with a default styling available at this location in the installed package:
+```bash
+node_modules/react-giphy-select/dist/styles.css
+```
+You will need [Webpack](https://webpack.js.org/) or other build system supprts requiring css files.
+```javascript
+import React, { Component } from 'react';
+import GiphySelect from 'react-giphy-select';
+
+export default class Example extends Component {
+  render() {
+    return (
+      <div>
+        <GiphySelect />
+      </div>
+    );
+  }
+}
 ```
 
 ## Props
@@ -48,25 +71,6 @@ ISO 639-1 country code. See list of supported languages [here](https://github.co
   ```
 
   - **entry** - Object with entry data from Giphy API.
-
-## Usage
-```javascript
-import React, { Component } from 'react';
-import GiphySelect from 'react-giphy-select';
-
-export default class Example extends Component {
-  render() {
-    return (
-      <div>
-        <GiphySelect />
-      </div>
-    );
-  }
-}
-```
-
-## Attribution to Giphy
-Please read Giphy [terms of service](https://giphy.com/terms).
 
 ## Contribution
 Start demo with docs

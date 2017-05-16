@@ -14,7 +14,7 @@ module.exports = {
     },
   },
   output: {
-    filename: 'react-giphy-select.min.js',
+    filename: 'index.js',
     library: 'GiphySelect',
     libraryTarget: 'umd',
     path: resolve(__dirname, 'dist'),
@@ -33,7 +33,7 @@ module.exports = {
           use: [{
             loader: 'css-loader',
             options: {
-              minimize: process.env.NODE_ENV === 'production',
+              minimize: true,
               modules: true,
               localIdentName: '[local]___[hash:base64:5]',
             },
@@ -41,11 +41,12 @@ module.exports = {
             loader: 'postcss-loader',
           }],
         }),
+        exclude: /node_modules/,
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('react-giphy-select.min.css'),
+    new ExtractTextPlugin('styles.css'),
     new webpack.optimize.UglifyJsPlugin(),
   ],
 };
