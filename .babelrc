@@ -1,10 +1,13 @@
 {
   "presets": [
-    ["env", {"modules": false}],
+    "env",
     "stage-0",
     "react"
   ],
   "plugins": [
-    "react-hot-loader/babel"
+    ["css-modules-transform", {
+      "generateScopedName": "react-giphy-select__[path][name]__[local]___[hash:base64:5]",
+      "extractCss": "./lib/styles.css"
+    }]
   ]
 }

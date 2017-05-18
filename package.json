@@ -1,12 +1,12 @@
 {
   "name": "react-giphy-select",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A React component for select GIFs on GIPHY.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js",
-    "clean": "rimraf dist",
-    "build": "npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js",
+    "start": "webpack-dev-server",
+    "clean": "rimraf lib",
+    "build": "npm run clean && babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
   },
@@ -30,6 +30,7 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
+    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

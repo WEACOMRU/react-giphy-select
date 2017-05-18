@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const reactHotLoader = require('react-hot-loader/babel');
 
 const docsDir = resolve(__dirname, 'docs');
 
@@ -26,7 +27,18 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader'],
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['env', { modules: false }],
+              'stage-0',
+              'react',
+            ],
+            plugins: [reactHotLoader],
+            babelrc: false,
+          },
+        }],
         exclude: /node_modules/,
       },
       {
@@ -37,7 +49,7 @@ module.exports = {
           loader: 'css-loader',
           options: {
             modules: true,
-            localIdentName: '[local]___[hash:base64:5]',
+            localIdentName: '[path][name]__[local]___[hash:base64:5]',
           },
         }, {
           loader: 'postcss-loader',
