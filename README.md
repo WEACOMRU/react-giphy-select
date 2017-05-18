@@ -18,13 +18,13 @@ $ npm i -S react-giphy-select
 ## Usage
 The plugin ships with a default styling available at this location in the installed package:
 ```bash
-node_modules/react-giphy-select/dist/styles.css
+node_modules/react-giphy-select/lib/styles.css
 ```
 You will need [Webpack](https://webpack.js.org/) or other build system, that supports requiring css files.
 ```javascript
 import React, { Component } from 'react';
 import GiphySelect from 'react-giphy-select';
-import 'react-giphy-select/dist/styles.css';
+import 'react-giphy-select/lib/styles.css';
 
 export default class Example extends Component {
   render() {

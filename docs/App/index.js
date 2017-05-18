@@ -11,10 +11,10 @@ registerLanguage('bash', bash);
 registerLanguage('javascript', javascript);
 
 const installationCode = '$ npm i -S react-giphy-select';
-const stylesCode = 'node_modules/react-giphy-select/dist/styles.css';
+const stylesCode = 'node_modules/react-giphy-select/lib/styles.css';
 const usageCode = `import React, { Component } from 'react';
 import GiphySelect from 'react-giphy-select';
-import 'react-giphy-select/dist/styles.css';
+import 'react-giphy-select/lib/styles.css';
 
 export default class Example extends Component {
   render() {
