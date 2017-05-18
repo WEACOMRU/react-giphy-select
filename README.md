@@ -74,7 +74,7 @@ ISO 639-1 country code. See list of supported languages [here](https://github.co
   - **entry** - Object with entry data from Giphy API.
 
 ## Contribution
-Start demo with docs
+Install all dependencies, then start the demo
 ```bash
 $ npm start
 ```

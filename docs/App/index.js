@@ -221,7 +221,9 @@ export default class App extends Component {
         </dl>
 
         <h2 className={styles.appHeader2}>Contribution</h2>
-        <p>Start demo with docs</p>
+        <p>
+          Install all dependencies, then start the demo
+        </p>
         <SyntaxHighlighter
           language="bash"
           style={tomorrowNightEighties}
