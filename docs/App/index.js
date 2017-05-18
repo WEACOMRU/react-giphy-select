@@ -53,7 +53,7 @@ export default class App extends Component {
         />
         <div className={styles.appInspector}>
           <h3 className={styles.appInspectorTitle}>
-            Plese select a GIF
+            Please, select a GIF
           </h3>
           <ObjectInspector data={this.state.entry} />
         </div>
