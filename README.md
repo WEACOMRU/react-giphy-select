@@ -8,7 +8,7 @@ By default it show GIFs currently trending online. But user can request
 a specific GIFs using the search input.
 
 ## Attribution to Giphy
-Please read Giphy [terms of service](https://giphy.com/terms).
+Please, read Giphy [terms of service](https://giphy.com/terms).
 
 ## Installation
 ```bash

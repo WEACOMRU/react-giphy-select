@@ -64,7 +64,7 @@ export default class App extends Component {
 
         <h2 className={styles.appHeader2}>Attribution to Giphy</h2>
         <p>
-          Please read Giphy&nbsp;
+          Please, read Giphy&nbsp;
           <a
             href="https://giphy.com/terms"
             rel="noopener noreferrer"
