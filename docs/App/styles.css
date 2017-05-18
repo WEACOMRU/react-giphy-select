@@ -30,6 +30,7 @@
 
 .appInspector {
   padding: 10px;
+  word-wrap: break-word;
   border: 1px solid #ccc;
 }
 
