@@ -76,6 +76,7 @@ ISO 639-1 country code. See list of supported languages [here](https://github.co
 ## Contribution
 Install all dependencies, then start the demo
 ```bash
+$ npm install
 $ npm start
 ```
 Please, create issues and pull requests.

@@ -27,7 +27,8 @@ export default class Example extends Component {
 }`;
 const renderEntryCode = 'renderEntry(entry, onSelect, options)';
 const onEntrySelectCode = 'onEntrySelect(entry)';
-const contributingCode = '$ npm start';
+const contributingCode = `$ npm install
+$ npm start`;
 
 export default class App extends Component {
   state = {
