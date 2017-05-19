@@ -1,8 +1,7 @@
 .babelrc
 .eslintrc
-postcss.config.js
 github-preview.jpg
-webpack.config.dev.js
-webpack.config.prod.js
+postcss.config.js
+webpack.config.js
 docs/
 src/
