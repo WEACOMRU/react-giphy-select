@@ -7,9 +7,9 @@
     "build": "npm run clean && babel src -d lib",
     "clean": "rimraf lib",
     "lint": "eslint ./",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run build",
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && jest"
   },
   "repository": {
     "type": "git",
@@ -36,24 +36,30 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.1",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "extract-text-webpack-plugin": "^2.1.0",
+    "jest": "^20.0.3",
+    "jest-fetch-mock": "^1.1.1",
     "postcss-loader": "^2.0.5",
+    "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-inspector": "^2.0.0",
     "react-jss": "^6.1.1",
     "react-syntax-highlighter": "^5.6.0",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.8",
     "react-custom-scrollbars": "^4.1.1",
     "react-masonry-component": "^5.0.5"
@@ -65,5 +71,11 @@
     "> 1%",
     "last 2 versions",
     "Firefox ESR"
-  ]
+  ],
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
+  }
 }

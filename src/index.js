@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GiphyList from './GiphyList';
@@ -34,7 +35,7 @@ export default class GiphySelect extends Component {
     items: [],
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this._fetchItems();
   }
 

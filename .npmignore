@@ -1,7 +1,9 @@
 .babelrc
+.eslintignore
 .eslintrc
 github-preview.jpg
 postcss.config.js
+setupJest.js
 webpack.config.js
 docs/
 src/
