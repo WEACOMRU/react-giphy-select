@@ -4,11 +4,12 @@
   "description": "A React component for select GIFs on GIPHY.",
   "main": "lib/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "clean": "rimraf lib",
     "build": "npm run clean && babel src -d lib",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
+    "clean": "rimraf lib",
+    "lint": "eslint ./",
+    "prepublishOnly": "npm run lint && npm run build",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
