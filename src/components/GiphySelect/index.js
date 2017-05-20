@@ -39,6 +39,8 @@ export default class GiphySelect extends Component {
     this._fetchItems();
   }
 
+  shouldComponentUpdate = () => !this._activeFetch;
+
   loadNextPage = () => {
     if (this._offset < this._totalCount) {
       this._fetchItems();
@@ -57,6 +59,7 @@ export default class GiphySelect extends Component {
       if (query !== this._query) {
         this._query = query;
         this._offset = 0;
+        this._activeFetch = true;
         this.setState({
           items: [],
         });
@@ -84,10 +87,10 @@ export default class GiphySelect extends Component {
   }
 
   _updateItems = response => {
+    this._activeFetch = false;
     this.setState(prevState => ({
       items: [...prevState.items, ...response.data],
     }));
-
     this._offset = response.pagination.offset + response.pagination.count;
     this._totalCount = response.pagination.total_count;
   }
@@ -102,6 +105,7 @@ export default class GiphySelect extends Component {
   _requestTimer = null;
   _offset = 0;
   _totalCount = 0;
+  _activeFetch = false;
 
   render() {
     const { placeholder, renderEntry, onEntrySelect } = this.props;

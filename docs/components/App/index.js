@@ -120,6 +120,10 @@ export default class App extends Component {
               <dd className={styles.appSubParamsDesc}>
                 CSS class for entries list.
               </dd>
+              <dt className={styles.appSubParamsName}>listEmpty</dt>
+              <dd className={styles.appSubParamsDesc}>
+                CSS class for empty state of entries list.
+              </dd>
               <dt className={styles.appSubParamsName}>listScrollbar</dt>
               <dd className={styles.appSubParamsDesc}>
                 CSS class for scrollbar.
