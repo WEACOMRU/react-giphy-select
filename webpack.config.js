@@ -62,4 +62,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],
+  resolve: {
+    alias: {
+      GiphySelect: resolve(__dirname, 'src'),
+    },
+  },
 };

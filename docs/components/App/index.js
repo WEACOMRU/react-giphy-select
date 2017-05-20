@@ -4,8 +4,8 @@ import bash from 'react-syntax-highlighter/dist/languages/bash';
 import javascript from 'react-syntax-highlighter/dist/languages/javascript';
 import tomorrowNightEighties from 'react-syntax-highlighter/dist/styles/tomorrow-night-eighties';
 import { ObjectInspector } from 'react-inspector';
+import GiphySelect from 'GiphySelect'; // eslint-disable-line import/no-unresolved, import/extensions
 import styles from './styles.css';
-import GiphySelect from '../../src';
 
 registerLanguage('bash', bash);
 registerLanguage('javascript', javascript);
