@@ -29,6 +29,8 @@ const renderEntryCode = 'renderEntry(entry, onSelect, options)';
 const onEntrySelectCode = 'onEntrySelect(entry)';
 const contributingCode = `$ npm install
 $ npm start`;
+const testCode = `$ npm run lint
+$ npm test`;
 
 export default class App extends Component {
   state = {
@@ -222,13 +224,16 @@ export default class App extends Component {
         </dl>
 
         <h2 className={styles.appHeader2}>Contribution</h2>
-        <p>
-          Install all dependencies, then start the demo
-        </p>
+        <p>Install all dependencies, then start the demo</p>
         <SyntaxHighlighter
           language="bash"
           style={tomorrowNightEighties}
         >{contributingCode}</SyntaxHighlighter>
+        <p>Do not forget about tests and lint check</p>
+        <SyntaxHighlighter
+          language="bash"
+          style={tomorrowNightEighties}
+        >{testCode}</SyntaxHighlighter>
         <p>Please, create issues and pull requests.</p>
 
         <h2 className={styles.appHeader2}>License</h2>
