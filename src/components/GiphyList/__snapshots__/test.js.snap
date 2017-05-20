@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GiphyList /> snapshot match 1`] = `
+<div
+  class="react-giphy-select__src-components-GiphyList-styles__list___Tdg5X"
+>
+  <div
+    style="position:relative;overflow:hidden;width:100%;height:100%;"
+  >
+    <div
+      style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:scroll;-webkit-overflow-scrolling:touch;margin-right:0;margin-bottom:0;"
+    >
+      <div
+        class="react-giphy-select__src-components-GiphyList-styles__listMasonry___3rIoZ"
+        role="listbox"
+      >
+        <div
+          class="react-giphy-select__src-components-GiphyList-styles__listItem___2RULM"
+        >
+          <button
+            aria-selected="true"
+            class="react-giphy-select__src-components-GiphyList-styles__listEntry___D_T4j"
+            role="option"
+            style="width:100px;height:56px;background-image:url(http://media0.giphy.com/media/op7uqYWBm3R04/100w_s.gif);"
+          >
+            <img
+              alt="food-krush-groove-the-fat-boys-op7uqYWBm3R04"
+              class="react-giphy-select__src-components-GiphyList-styles__listEntryImage___1oyhk"
+              height="56"
+              src="http://media0.giphy.com/media/op7uqYWBm3R04/100w.gif"
+              width="100"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="position:absolute;height:6px;display:none;right:2px;bottom:2px;left:2px;border-radius:3px;"
+    >
+      <div
+        style="position:relative;display:block;height:100%;cursor:pointer;border-radius:inherit;background-color:rgba(0,0,0,.2);"
+      />
+    </div>
+    <div
+      class="react-giphy-select__src-components-GiphyList-styles__listScrollbar___1dS3n"
+    >
+      <div
+        class="react-giphy-select__src-components-GiphyList-styles__listScrollbarThumb___1L0ZG"
+        style="position:relative;display:block;width:100%;"
+      />
+    </div>
+  </div>
+</div>
+`;
