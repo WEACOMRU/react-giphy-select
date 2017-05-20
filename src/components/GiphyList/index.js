@@ -73,6 +73,7 @@ export default class GiphyList extends Component {
 
   _theme = {
     list: styles.list,
+    listEmpty: styles.listEmpty,
     listScrollbar: styles.listScrollbar,
     listScrollbarThumb: styles.listScrollbarThumb,
     listMasonry: styles.listMasonry,
@@ -87,7 +88,10 @@ export default class GiphyList extends Component {
     const theme = this._theme;
 
     return (
-      <div className={theme.list} onWheel={this._onWheel}>
+      <div
+        className={items.length ? theme.list : theme.listEmpty}
+        onWheel={this._onWheel}
+      >
         <Scrollbars
           onScrollFrame={this._onScroll}
           renderTrackVertical={() => (

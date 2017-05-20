@@ -2,8 +2,22 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 15px;
+  position: relative;
   width: 330px;
   height: 330px;
+}
+
+.listEmpty {
+  composes: list;
+}
+
+.listEmpty::before {
+  content: 'No results.';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #aaa;
+  transform: translate(-50%, -50%);
 }
 
 .listScrollbar {

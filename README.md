@@ -42,6 +42,7 @@ export default class Example extends Component {
   - **select** - CSS class for GiphySelect component.
   - **selectInput** - CSS class for search input.
   - **list** - CSS class for entries list.
+  - **listEmpty** - CSS class for empty state of entries list.
   - **listScrollbar** - CSS class for scrollbar.
   - **listScrollbarThumb** - CSS class for scrollbar thumb.
   - **listMasonry** - CSS class for masonry layout.
