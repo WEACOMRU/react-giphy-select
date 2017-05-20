@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GiphySelect /> snapshot match 1`] = `
+<div
+  className="react-giphy-select__src-components-GiphySelect-styles__select___25GhN"
+  onWheel={[Function]}
+>
+  <input
+    className="react-giphy-select__src-components-GiphySelect-styles__selectInput___18Wcj"
+    onChange={[Function]}
+    placeholder="Search GIFs"
+  />
+  <GiphyList
+    items={Array []}
+    loadNextPage={[Function]}
+    onEntrySelect={[Function]}
+    renderEntry={[Function]}
+    theme={
+      Object {
+        "attribution": "react-giphy-select__src-components-GiphySelect-styles__attribution___1RUSw",
+        "select": "react-giphy-select__src-components-GiphySelect-styles__select___25GhN",
+        "selectInput": "react-giphy-select__src-components-GiphySelect-styles__selectInput___18Wcj",
+      }
+    }
+  />
+  <div
+    className="react-giphy-select__src-components-GiphySelect-styles__attribution___1RUSw"
+  >
+    Powered by Giphy
+  </div>
+</div>
+`;

@@ -33,6 +33,7 @@ export default class GiphyList extends Component {
         }}
         onClick={() => onSelect(entry)}
         role="option"
+        aria-selected
       >
         <img
           className={options.theme.listEntryImage}
@@ -100,7 +101,10 @@ export default class GiphyList extends Component {
         >
           <Masonry className={theme.listMasonry} role="listbox">
             {items.map(entry => (
-              <div key={entry.id} className={theme.listItem} role="option">
+              <div
+                key={entry.id}
+                className={theme.listItem}
+              >
                 {this.props.renderEntry(entry, onEntrySelect, { theme })}
               </div>
             ))}

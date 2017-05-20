@@ -79,6 +79,11 @@ Install all dependencies, then start the demo
 $ npm install
 $ npm start
 ```
+Don't forget about tests and lint check
+```bash
+$ npm run lint
+$ npm test
+```
 Please, create issues and pull requests.
 
 ## License
