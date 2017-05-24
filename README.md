@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/WEACOMRU/react-giphy-select.svg?branch=master)](https://travis-ci.org/WEACOMRU/react-giphy-select)
 
+[![npm version](https://badge.fury.io/js/react-giphy-select.svg)](https://badge.fury.io/js/react-giphy-select)
+
 > A React component for select GIFs by Giphy API.
 
 ![Preview](https://raw.githubusercontent.com/WEACOMRU/react-giphy-select/master/github-preview.jpg)
