@@ -8,7 +8,7 @@
     "build:lib": "babel src -d lib --ignore test.js",
     "clean": "rimraf lib",
     "lint": "eslint ./",
-    "prepublish": "in-publish && npm run build",
+    "version": "npm run build",
     "start": "webpack-dev-server",
     "test": "jest --verbose",
     "test:watch": "jest --verbose --watch"
@@ -46,7 +46,6 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "in-publish": "^2.0.0",
     "jest": "^20.0.3",
     "jest-fetch-mock": "^1.1.1",
     "postcss-loader": "^2.0.5",
