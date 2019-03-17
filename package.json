@@ -4,14 +4,15 @@
   "description": "A React component for select GIFs on GIPHY.",
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:lib",
+    "build": "npm run build:clean && npm run build:lib",
     "build:lib": "babel src -d lib --ignore test.js",
-    "clean": "rimraf lib",
+    "build:clean": "rimraf lib",
     "lint": "eslint ./",
     "version": "npm run build",
     "start": "webpack-dev-server",
     "test": "jest --verbose",
-    "test:watch": "jest --verbose --watch"
+    "test:watch": "jest --verbose --watch",
+    "build-docs": "rimraf docs-dist && NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "4",
     "css-loader": "^0.28.1",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
@@ -58,7 +60,9 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-bundle-analyzer": "^3.1.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
