@@ -6,4 +6,5 @@ postcss.config.js
 setupJest.js
 webpack.config.js
 docs/
+docs-dist/
 src/
