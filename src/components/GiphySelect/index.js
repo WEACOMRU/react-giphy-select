@@ -17,6 +17,7 @@ export default class GiphySelect extends Component {
     requestLang: PropTypes.string,
     requestRating: PropTypes.string,
     renderEntry: PropTypes.func,
+    autoFocus: PropTypes.bool,
     onEntrySelect: PropTypes.func,
   };
 
@@ -28,6 +29,7 @@ export default class GiphySelect extends Component {
     requestLang: '',
     requestRating: 'pg',
     renderEntry: GiphyList.defaultProps.renderEntry,
+    autoFocus: false,
     onEntrySelect: GiphyList.defaultProps.onEntrySelect,
   };
 
@@ -40,6 +42,14 @@ export default class GiphySelect extends Component {
   }
 
   shouldComponentUpdate = () => !this._activeFetch;
+
+  componentDidMount() {
+    setTimeout(() => {
+      if (this.input && this.props.autoFocus) {
+        this.input.focus()
+      }
+    }, 0)
+  }
 
   loadNextPage = () => {
     if (this._offset < this._totalCount) {
@@ -95,6 +105,10 @@ export default class GiphySelect extends Component {
     this._totalCount = response.pagination.total_count;
   }
 
+  _setInputRef = input => {
+    this.input = input
+  }
+
   _theme = {
     select: styles.select,
     selectInput: styles.selectInput,
@@ -116,6 +130,7 @@ export default class GiphySelect extends Component {
         <input
           className={theme.selectInput}
           placeholder={placeholder}
+          ref={this._setInputRef}
           onChange={this._onQueryChange}
         />
         <GiphyList
