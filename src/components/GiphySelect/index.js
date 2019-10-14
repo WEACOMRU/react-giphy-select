@@ -44,11 +44,11 @@ export default class GiphySelect extends Component {
   shouldComponentUpdate = () => !this._activeFetch;
 
   componentDidMount() {
-    setImmediate(() => {
+    setTimeout(() => {
       if (this.input && this.props.autoFocus) {
         this.input.focus()
       }
-    })
+    }, 0)
   }
 
   loadNextPage = () => {
