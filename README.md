@@ -1,3 +1,9 @@
+# DEPRECATED
+
+### Please note, this project is deprecated and no longer being maintained, please use official [sdk](https://github.com/Giphy/giphy-js/tree/master/packages/react-components).
+
+----------
+
 # react-giphy-select
 
 [![Build Status](https://travis-ci.org/WEACOMRU/react-giphy-select.svg?branch=master)](https://travis-ci.org/WEACOMRU/react-giphy-select)

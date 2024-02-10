@@ -1,3 +1,5 @@
+.idea
+.yarn
 npm-debug.log
 docs-dist/
 lib/
